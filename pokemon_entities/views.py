@@ -91,6 +91,9 @@ def show_pokemon(request, pokemon_id):
 
     pokemon = {
         'title_ru': db_pokemon.title,
+        'title_en': db_pokemon.title_en,
+        'title_jp': db_pokemon.title_jp,
+        'description': db_pokemon.description,
         'img_url': pokemon_image,
         'entities': None,
     }
