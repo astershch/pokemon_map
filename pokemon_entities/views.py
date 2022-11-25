@@ -39,7 +39,7 @@ def show_all_pokemons(request):
                     pokemon_entity.pokemon.image.url,
                 )
             else:
-                pokemon_image_url = None
+                continue
 
             add_pokemon(
                 folium_map, pokemon_entity.lat,
