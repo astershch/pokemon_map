@@ -107,7 +107,7 @@ def show_pokemon(request, pokemon_id):
             'pokemon_id': db_pokemon.previous_evolution.id,
         }
 
-    next_evolution = db_pokemon.pokemon_set.filter(
+    next_evolution = db_pokemon.pokemon.filter(
         previous_evolution__id=db_pokemon.id,
     ).first()
 

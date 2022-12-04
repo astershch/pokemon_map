@@ -17,6 +17,7 @@ class Pokemon(models.Model):
     image = models.ImageField('Изображение', upload_to='images', null=True, blank=True)
     previous_evolution = models.ForeignKey(
         'self',
+        related_name='prev_evolution',
         verbose_name='В кого эволюционирует',
         null=True,
         blank=True,
@@ -29,6 +30,7 @@ class Pokemon(models.Model):
 class PokemonEntity(models.Model):
     pokemon = models.ForeignKey(
         Pokemon,
+        related_name='pokemon',
         verbose_name='Покемон',
         on_delete=models.CASCADE,
     )
