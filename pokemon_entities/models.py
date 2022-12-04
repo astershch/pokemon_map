@@ -40,31 +40,26 @@ class PokemonEntity(models.Model):
     disappeared_at = models.DateTimeField('Исчезнет', default=None)
     level = models.IntegerField(
         'Уровень',
-        default=0,
         null=True,
         blank=True,
     )
     health = models.IntegerField(
         'Здоровье',
-        default=0,
         null=True,
         blank=True,
     )
     strength = models.IntegerField(
         'Сила',
-        default=0,
         null=True,
         blank=True,
     )
     defence = models.IntegerField(
         'Защита',
-        default=0,
         null=True,
         blank=True,
     )
     stamina = models.IntegerField(
         'Выносливость',
-        default=0,
         null=True,
         blank=True,
     )
