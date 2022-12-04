@@ -107,7 +107,7 @@ def show_pokemon(request, pokemon_id):
             'pokemon_id': db_pokemon.previous_evolution.id,
         }
 
-    next_evolution = db_pokemon.pokemon.filter(
+    next_evolution = db_pokemon.prev_evolutions.filter(
         previous_evolution__id=db_pokemon.id,
     ).first()
 
@@ -122,10 +122,12 @@ def show_pokemon(request, pokemon_id):
 
     folium_map = folium.Map(location=MOSCOW_CENTER, zoom_start=12)
 
+    current_time = localtime()
+
     pokemon_entities = PokemonEntity.objects.filter(
         pokemon=db_pokemon,
-        appeared_at__lte=localtime(),
-        disappeared_at__gt=localtime(),
+        appeared_at__lte=current_time,
+        disappeared_at__gt=current_time,
     )
 
     if pokemon_entities:
