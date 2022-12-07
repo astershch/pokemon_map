@@ -119,7 +119,7 @@ def show_pokemon(request, pokemon_id):
 
     current_time = localtime()
 
-    pokemon_entities = pokemon.pokemon_entities.filter(
+    pokemon_entities = pokemon.entities.filter(
         appeared_at__lte=current_time,
         disappeared_at__gt=current_time,
     )
